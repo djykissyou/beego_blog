@@ -13,6 +13,8 @@ File Encoding         : 65001
 Date: 2017-08-09 20:45:30
 */
 
+USE daai;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
