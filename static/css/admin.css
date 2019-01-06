@@ -1,0 +1,255 @@
+/*文章分类导航*/
+.admin-panel {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    bottom: 0;
+    background: #393D49;
+    color: #eee;
+    width: 130px;
+    font-size: 11px;
+    padding: 10px;
+    display: none;
+    margin: 0;
+    z-index: 999;
+}
+
+.admin-panel > .admin-panel-title {
+    text-align: center;
+    border-bottom: 1px solid #009688;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 0 5px 0;
+    margin-bottom: 5px;
+}
+
+.admin-panel > a {
+    display: block;
+    color: #eee;
+    padding: 5px 1%;
+    margin: 4px 0;
+    background: #009688;
+    width: 98%;
+    text-align: center;
+    line-height: 19px;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    float: left;
+}
+
+.admin-panel > a:hover {
+    color: #fff;
+    background: #5FB878;
+}
+
+.panel-toggle {
+    position: fixed;
+    left: 0;
+    top: 40%;
+    width: 15px;
+    background: #009688;
+    color: #fff;
+    font-size: 16px;
+    padding: 30px 0;
+    z-index: 9999;
+}
+
+.panel-toggle > i {
+    display: block;
+    height: 16px;
+    padding: 0px 2px;
+}
+
+.panelIn {
+    -moz-animation: panelIn 0.5s;
+    -o-animation: panelIn 0.5s;
+    -webkit-animation: panelIn 0.5s;
+    animation: panelIn 0.5s;
+}
+
+.panelOut {
+    -moz-animation: panelOut 0.5s;
+    -o-animation: panelOut 0.5s;
+    -webkit-animation: panelOut 0.5s;
+    animation: panelOut 0.5s;
+}
+
+.layui-layout-admin .layui-footer {
+    left: 0px
+}
+.layui-body {
+    left: 0px;
+    width :100%;
+}
+/*分类导航In动画*/
+@keyframes panelIn {
+    from {
+        left: -140px;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@-moz-keyframes panelIn {
+    from {
+        left: -140px;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@-webkit-keyframes panelIn {
+    from {
+        left: -140px;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+/*分类导航Out动画*/
+@keyframes panelOut {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -140px;
+    }
+}
+
+@-moz-keyframes panelOut {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -140px;
+    }
+}
+
+@-webkit-keyframes panelOut {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -140px;
+    }
+}
+
+@media (min-width: 768px) {
+    .admin-panel {
+        font-size: 13px;
+        width: 260px !important;
+    }
+
+    .admin-panel > .blog-module-title {
+        text-align: start;
+    }
+
+    .admin-panel > a {
+        padding: 7px 1%;
+        margin: 5px 0;
+        width: 46%;
+    }
+
+    .admin-panel > a:nth-child(odd) {
+        float: right;
+    }
+
+    .admin-panel > a:nth-child(even) {
+        float: left;
+    }
+
+    @keyframes panelIn {
+        from {
+            left: -280px;
+        }
+
+        to {
+            left: 0;
+        }
+    }
+
+    @-moz-keyframes panelIn {
+        from {
+            left: -280px;
+        }
+
+        to {
+            left: 0;
+        }
+    }
+
+    @-webkit-keyframes panelIn {
+        from {
+            left: -280px;
+        }
+
+        to {
+            left: 0;
+        }
+    }
+
+    @keyframes panelOut {
+        from {
+            left: 0;
+        }
+
+        to {
+            left: -280px;
+        }
+    }
+
+    @-moz-keyframes panelOut {
+        from {
+            left: 0;
+        }
+
+        to {
+            left: -280px;
+        }
+    }
+
+    @-webkit-keyframes panelOut {
+        from {
+            left: 0;
+        }
+
+        to {
+            left: -280px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .admin-panel {
+        display: block;
+        color: #333;
+        width: 200px !important;
+        font-size: 14px;
+        padding: 0px;
+
+    }
+
+    .layui-layout-admin .layui-footer {
+        left: 200px;
+    }
+
+    .layui-body {
+        left: 200px;
+    }
+
+    .panel-toggle {
+        display: none;
+    }
+}
+/*文章分类导航END*/
