@@ -27,7 +27,7 @@ func (p *baseController) Prepare()  {
 	}
 
 	//初始化前台页面相关元素
-	if strings.ToLower( p.controllerName) == "blog"{
+	if strings.ToLower( p.controllerName) == "blog" || strings.ToLower( p.controllerName) == "error"{
 
 		p.Data["actionName"] = strings.ToLower(actionName)
 		var result []*models.Config

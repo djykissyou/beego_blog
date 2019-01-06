@@ -1,0 +1,57 @@
+
+{{template "blog/head.html" .}}
+<style>
+    .col-main {
+        float: left;
+        color: #666;
+        width: 535px;
+    }
+    .col-sub {
+        float: left;
+        width: 455px;
+        text-align: center;
+        height: 255px;
+    }
+    .hightlight {
+        color: #fbb300;
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    .title {
+        font-size: 18px;
+        color: #444;
+    }
+    .mod-errorinfo {
+        overflow: hidden;
+        width: 100%;
+        margin: 0 auto;
+        padding: 150px 0px 50px 0px;
+        background: #ffffff;
+    }
+    .error-info {
+        border-bottom: 1px dotted #b3b3b3;
+        padding: 35px 0 15px;
+    }
+    .error-nextlink {
+        padding-top: 20px;
+    }
+</style>
+<div class="mod-errorinfo fd-clr">
+    <div class="col-sub"><img src="/static/images/404.jpg"></div>
+    <div class="col-main">
+        <div class="error-info">
+            <h3 class="title"><em class="hightlight">Error 404</em><em>抱歉，您要访问的页面不存在</em></h3>
+            <p class="fs-12">有可能我们的网页正在维护或者您输入的网址不正确</p>
+        </div>
+        <div class="error-nextlink">
+            <div class="jump-links">您可以：<a href="/" class="layui-btn layui-btn-sm layui-btn-radius" target="_self" title="去首页">去首页</a>
+                <script type="text/javascript">
+                    (function(d){d.referrer !== "" && d.referrer.indexOf("{{ .config.hostname }}") !="-1" && d.write('或<a href="#" class="jump-history" target="_self" onclick ="javascript:history.go(-1);return false;">返回上一页</a>')}(document))
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+{{template "blog/foot.html" .}}
+</body>
+</html>

@@ -25,9 +25,24 @@ func (c *AdminController) Config()  {
 		mp[v.Name] = v
 	}
 	if c.Ctx.Request.Method == "POST" {
-		keys := []string{"url", "title",  "keywords", "description", "email", "start", "qq"}
-		for _, key := range keys {
-			val := c.GetString(key)
+		configs := map[string]string{
+			"url": "",
+			"title": "",
+			"keywords": "",
+			"description": "",
+			"email": "",
+			"start": "",
+			"qq": "",
+			"hostname": "",
+		}
+		for key, _ := range configs {
+			configs[key] = c.GetString(key)
+		}
+
+		urlParsed := strings.Split(strings.Split(strings.Split(configs["url"], "//")[1], "/")[0], ".")
+		configs["hostname"] = urlParsed[len(urlParsed)-2]+"."+urlParsed[len(urlParsed)-1]
+
+		for key, val := range configs {
 			if _, ok := mp[key]; !ok {
 				options[key] = val
 				c.o.Insert(&models.Config{Name:key, Value:val})
